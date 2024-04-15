@@ -13,7 +13,7 @@
   "homekit": {},
   "dependencies": [],
   "codeowners": [
-    "@Kir4Kun"
+    "@hareeshmu"
   ],
   "iot_class": "cloud_push",
   "version": "0.2.10"
