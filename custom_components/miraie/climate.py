@@ -67,6 +67,7 @@ class MirAIeClimate(ClimateEntity):
             HVACMode.DRY,
             HVACMode.FAN_ONLY,
         ]
+        _enable_turn_on_off_backwards_compatibility = False
         self._attr_preset_modes = [PRESET_NONE, PRESET_ECO, PRESET_BOOST]
         self._attr_fan_mode = FAN_OFF
         self._attr_fan_modes = [
@@ -81,7 +82,9 @@ class MirAIeClimate(ClimateEntity):
         self._attr_min_temp = 16.0
         self._attr_target_temperature_step = 1
         self._attr_supported_features = (
-            ClimateEntityFeature.TARGET_TEMPERATURE
+            ClimateEntityFeature.TURN_OFF 
+            | ClimateEntityFeature.TURN_ON 
+            | ClimateEntityFeature.TARGET_TEMPERATURE
             | ClimateEntityFeature.FAN_MODE
             | ClimateEntityFeature.PRESET_MODE
             | ClimateEntityFeature.SWING_MODE
